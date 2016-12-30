@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Select Classes Extension (Sustc)",
+  "version": "1.0",
+  "description": "a Select Classes Extension (Only for Sustc)",
+  "icons": { "128": "images/online.png" },
+  "browser_action": {
+    "default_icon": "images/online.png",
+    "default_title": "Select Classes",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://jwxt.sustc.edu.cn/jsxsd/*"],
+      "js": ["jquery.js", "content_script.js"]
+    }
+  ]
+}

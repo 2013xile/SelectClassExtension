@@ -1,0 +1,43 @@
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+body {
+  margin: 0; padding: 0;
+  width: 300px;
+  text-align: center;
+}
+h1 {
+  font-size: 15px;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+input[type='text'], select{
+  margin: 10px;
+  width: 140px;
+}
+p{
+  border-top: 1px solid #eee;
+  font-size: 12px;
+  text-align: left;
+  padding: 10px 10px 0 10px;
+}
+.message{
+  border: none;
+}
+</style>
+</head>
+<body>
+<h1>Select Classes</h1>
+<form id="class">
+  <input type="button" value="Add" />
+  <input type="submit" value="Submit" />
+</form>
+<p class="message"></p>
+<p>
+此插件提供批量选课功能，不对数据库做任何修改。<br />仅在选课之后做过测试，慎用！
+</p>
+<script src="jquery.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
