@@ -7,16 +7,18 @@ body {
   width: 300px;
   text-align: center;
 }
-h1 {
-  font-size: 15px;
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
+.submit{
+  width: 100%;
+  padding: 10px 0;
+  font-size: 14px;
+  background-color: #377DEE;
+  color: #fff;
 }
-input[type='text'], select{
-  margin: 10px;
-  width: 140px;
+.submit:hover{
+  cursor: pointer;
+  background-color: #6CB2FF;
 }
-p{
+.state{
   border-top: 1px solid #eee;
   font-size: 12px;
   text-align: left;
@@ -24,18 +26,18 @@ p{
 }
 .message{
   border: none;
+  padding: 0 10px;
+  text-align: left;
 }
 </style>
 </head>
 <body>
-<h1>Select Classes</h1>
-<form id="class">
-  <input type="button" value="Add" />
-  <input type="submit" value="Submit" />
-</form>
-<p class="message"></p>
-<p>
-此插件提供批量选课功能，不对数据库做任何修改。<br />仅在选课之后做过测试，慎用！
+<div class="submit">一键选课</div>
+<p class="message">
+此处显示选课结果：<br />
+</p>
+<p class="state">
+此插件提供批量选课功能，不对数据库做任何修改。<br />选课成功率没有保证，不承担任何未选上课的责任
 </p>
 <script src="jquery.js"></script>
 <script src="script.js"></script>
