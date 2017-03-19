@@ -1,13 +1,24 @@
 {
   "manifest_version": 2,
   "name": "Select Classes Extension (Sustc)",
-  "version": "1.0",
+  "version": "1.2",
   "description": "a Select Classes Extension (Only for Sustc)",
   "icons": { "128": "images/online.png" },
   "browser_action": {
     "default_icon": "images/online.png",
     "default_title": "Select Classes",
     "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "options_ui": {
+    // Required.
+    "page": "options.html"
+    // Recommended.
+    // Not recommended; only provided for backwards compatibility,
+    // and will be unsupported in a future version of Chrome (TBD).
+    //"open_in_tab": true
   },
   "content_scripts": [
     {

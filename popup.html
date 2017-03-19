@@ -7,14 +7,19 @@ body {
   width: 300px;
   text-align: center;
 }
-.submit{
+.btn{
   width: 100%;
+  display: table;
+}
+.btn div{
+  display: table-cell;
+  width: 50%;
   padding: 10px 0;
   font-size: 14px;
   background-color: #377DEE;
   color: #fff;
 }
-.submit:hover{
+.btn div:hover{
   cursor: pointer;
   background-color: #6CB2FF;
 }
@@ -32,14 +37,15 @@ body {
 </style>
 </head>
 <body>
-<div class="submit">一键选课</div>
+<div class="btn">
+<div class="submit">一键选课</div><div class="edit">编辑课表</div>
+</div>
 <p class="message">
-此处显示选课结果：<br />
 </p>
 <p class="state">
 此插件提供批量选课功能，不对数据库做任何修改。<br />选课成功率没有保证，不承担任何未选上课的责任
 </p>
 <script src="jquery.js"></script>
-<script src="script.js"></script>
+<script src="popup_script.js"></script>
 </body>
 </html>

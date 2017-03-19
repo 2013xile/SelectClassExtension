@@ -49,6 +49,6 @@ var xkOper = function (jx0404id, type, xkzy, trjf, obj) {
 chrome.runtime.onMessage.addListener(
   function (request, sender, sendResponse) {
     request.forEach(function (item, index) {
-      xkOper(item.code, item.type)
+      xkOper(item.code, item.typeCode)
     })
   })

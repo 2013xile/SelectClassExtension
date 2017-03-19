@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+body {
+  text-align: center;
+  width: 600px;
+}
+input[type='text'], select {
+  width: 150px;
+}
+.data {
+  width: 500px;
+  margin: auto;
+  text-align: left;
+}
+.classes {
+  width: 100%;
+  display: table;
+}
+.classes div {
+  width: 100%;
+  display: table-row;
+}
+.classes span {
+  border: 1px solid #eee;
+  width: 25%;
+  padding: 5px;
+  display: table-cell;
+}
+</style>
+</head>
+<body>
+  <form id="add">
+    <input type="text" id="class_name" placeholder="课程名称" />
+    <input type="text" id="code" placeholder="课程编号" />
+    <select id="type">
+      <option>必修选课</option>
+      <option>选修选课</option>
+      <option>本学期计划选课</option>
+      <option>专业内跨年级选课</option>
+      <option>跨专业选课</option>
+      <option>公选课选课</option>
+    </select>
+    <input type="submit" value="添加" />
+  </form>
+  <div class="data">
+    <p>当前课表：</p>
+    <div class="classes">
+      <div><span>课程名称</span><span>课程编号</span><span>课程类型</span><span>编辑</span><div>
+    </div>
+  </div>
+<script src="jquery.js"></script>
+<script src="options_script.js"></script>
+</body>
+</html>
