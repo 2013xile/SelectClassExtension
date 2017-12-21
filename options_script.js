@@ -54,10 +54,11 @@ function showClasses () {
   $.getJSON(`/data/${type}.json`).done(function (data) {
     if (data) {
       data.aaData.forEach(function (item, index) {
+        var teacher = item.skls
         var name = item.fzmc ? item.kcmc + '[' + item.fzmc + ']' : item.kcmc
         var code = item.jx0404id
         var time = item.sksj
-        var html = `<option value="${code}">${name} ${time}</option>`
+        var html = `<option value="${code}">${name} ${teacher} ${time}</option>`
         $('#class').append(html)
       })
     }
