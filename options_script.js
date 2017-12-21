@@ -7,7 +7,11 @@
       $('.classes').append(html)
     })
   }
+
+  showClasses()
 }())
+
+$('#type').on('change', showClasses)
 
 $('#add').submit(function (e) {
   var data = JSON.parse(localStorage.getItem('data'))
@@ -17,32 +21,10 @@ $('#add').submit(function (e) {
   } 
 
   var classes = data.classes
-  var name = $('#class_name').val()
-  var code = $('#code').val()
-  var type = $('#type').val()
-  var typeCode
-  switch (type) {
-    case '必修选课':
-      typeCode = 'bxxk'
-      break
-    case '选修选课':
-      typeCode = 'xxxk'
-      break
-    case '本学期计划选课':
-      typeCode = 'bxqjhxk'
-      break
-    case '专业内跨年级选课':
-      typeCode = 'knjxk'
-      break
-    case '跨专业选课':
-      typeCode = 'fawxk'
-      break
-    case '公选课选课':
-      typeCode = 'ggxxkxk'
-      break
-    default:
-      typeCode = 'bxxk'
-  }
+  var name = $('#class option:selected').text()
+  var code = $('#class').val()
+  var type = $('#type option:selected').text()
+  var typeCode = $('#type').val()
   var new_class = {
     name: name,
     code: code,
@@ -65,3 +47,20 @@ $('.del').on('click', function () {
   })
   localStorage.setItem('data', JSON.stringify(data))
 })
+
+function showClasses () {
+  $('#class').text('')
+  var type = $('#type').val()
+  $.getJSON(`/data/${type}.json`).done(function (data) {
+    if (data) {
+      data.aaData.forEach(function (item, index) {
+        var name = item.fzmc ? item.kcmc + '[' + item.fzmc + ']' : item.kcmc
+        var code = item.jx0404id
+        var time = item.sksj
+        var html = `<option value="${code}">${name} ${time}</option>`
+        $('#class').append(html)
+      })
+    }
+    $('#class').select2()
+  })
+}

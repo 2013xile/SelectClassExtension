@@ -21,5 +21,5 @@ $('.edit').on('click', function () {
 
 chrome.runtime.onMessage.addListener(
   function (request, sender, sendResponse) {
-    $('.message').text(request)
+    $('.message').append(request + '<br />')
   })

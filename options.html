@@ -5,6 +5,7 @@
 body {
   text-align: center;
   width: 600px;
+  height: 300px;
 }
 input[type='text'], select {
   width: 150px;
@@ -28,20 +29,25 @@ input[type='text'], select {
   padding: 5px;
   display: table-cell;
 }
+.select2-dropdown--below {
+  width: 250px!important;
+}
 </style>
+<link href="select2.min.css" rel="stylesheet" />
 </head>
 <body>
   <form id="add">
-    <input type="text" id="class_name" placeholder="课程名称" />
-    <input type="text" id="code" placeholder="课程编号" />
+    <label>课程类别</label>
     <select id="type">
-      <option>必修选课</option>
-      <option>选修选课</option>
-      <option>本学期计划选课</option>
-      <option>专业内跨年级选课</option>
-      <option>跨专业选课</option>
-      <option>公选课选课</option>
+      <option value="bxxk">必修选课</option>
+      <option value="xxxk">选修选课</option>
+      <option value="bxqjhxk">本学期计划选课</option>
+      <option value="knjxk">专业内跨年级选课</option>
+      <option value="fawxk">跨专业选课</option>
+      <option value="ggxxkxk">公选课选课</option>
     </select>
+    <label>课程</label>
+    <select id="class"></select>
     <input type="submit" value="添加" />
   </form>
   <div class="data">
@@ -51,6 +57,7 @@ input[type='text'], select {
     </div>
   </div>
 <script src="jquery.js"></script>
+<script src="select2.min.js"></script>
 <script src="options_script.js"></script>
 </body>
 </html>
