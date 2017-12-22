@@ -35,6 +35,28 @@ $('#add').submit(function (e) {
   localStorage.setItem('data', JSON.stringify(data))
 })
 
+$('#add2').submit(function (e) {
+  var data = JSON.parse(localStorage.getItem('data'))
+  if (!data) {
+    data = {}
+    data.classes = []
+  } 
+
+  var classes = data.classes
+  var name = $('#class_name').val()
+  var code = $('#code').val()
+  var type = $('#type option:selected').text()
+  var typeCode = $('#type').val()
+  var new_class = {
+    name: name,
+    code: code,
+    type: type,
+    typeCode: typeCode
+  }
+  classes.push(new_class)
+  localStorage.setItem('data', JSON.stringify(data))
+})
+
 $('.del').on('click', function () {
   var code = $(this).parent().prev().prev().text()
   var data = JSON.parse(localStorage.getItem('data'))

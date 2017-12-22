@@ -5,7 +5,7 @@
 body {
   text-align: center;
   width: 600px;
-  height: 300px;
+  min-height: 300px;
 }
 input[type='text'], select {
   width: 150px;
@@ -48,6 +48,19 @@ input[type='text'], select {
     </select>
     <label>课程</label>
     <select id="class"></select>
+    <input type="submit" value="添加" />
+  </form>
+  <form id="add2">
+    <input type="text" id="class_name" placeholder="课程名称" />
+    <input type="text" id="code" placeholder="课程编号" />
+    <select id="type">
+      <option value="bxxk">必修选课</option>
+      <option value="xxxk">选修选课</option>
+      <option value="bxqjhxk">本学期计划选课</option>
+      <option value="knjxk">专业内跨年级选课</option>
+      <option value="fawxk">跨专业选课</option>
+      <option value="ggxxkxk">公选课选课</option>
+    </select>
     <input type="submit" value="添加" />
   </form>
   <div class="data">
