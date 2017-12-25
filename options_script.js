@@ -45,8 +45,8 @@ $('#add2').submit(function (e) {
   var classes = data.classes
   var name = $('#class_name').val()
   var code = $('#code').val()
-  var type = $('#type option:selected').text()
-  var typeCode = $('#type').val()
+  var type = $('#type2 option:selected').text()
+  var typeCode = $('#type2').val()
   var new_class = {
     name: name,
     code: code,
